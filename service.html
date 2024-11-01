@@ -2,11 +2,13 @@
 <html lang="ru">
 <head>
     <meta charset="utf-8">
-    <title>Ремонт компьютеров - ПКФ Техновент</title>
+    <title>Ремонт компьютеров</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <link href="img/icon/icon-02-primary.png" rel="icon">
 
     <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
 
     <!-- Icon Font Stylesheet -->
@@ -52,6 +54,36 @@
             color: #fff;
             padding: 3rem 0;
             text-align: center;
+        }
+
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: #121212; /* Темный фон */
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            animation: float 5s infinite;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+            100% {
+                transform: translateY(0);
+            }
         }
 
         /* Services Section */
@@ -125,18 +157,30 @@
             padding: 15px;
             margin-top: 20px;
         }
+        .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%28255, 255, 255, 1%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+        }
     </style>
 </head>
 
 <body>
-
+    <div class="bg-animation">
+        <div class="particle" style="width: 10px; height: 10px; top: 20%; left: 30%; animation-duration: 6s;"></div>
+        <div class="particle" style="width: 15px; height: 15px; top: 50%; left: 70%; animation-duration: 4s;"></div>
+        <div class="particle" style="width: 12px; height: 12px; top: 80%; left: 20%; animation-duration: 5s;"></div>
+        <div class="particle" style="width: 20px; height: 20px; top: 30%; left: 60%; animation-duration: 7s;"></div>
+        <div class="particle" style="width: 8px; height: 8px; top: 10%; left: 80%; animation-duration: 3s;"></div>
+    </div>
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg sticky-top px-4 px-lg-5">
         <a href="index.html" class="navbar-brand">
-            <h1><img src="img/icon/icon-02-primary.png" alt="">ПКФ Техновент</h1>
+            <h1 class="m-0"><img class="img-fluid me-3"  src="img/icon/icon-02-primary.png" alt="">Ремонт компьютеров</h1>
         </a>
-        <div class="collapse navbar-collapse">
-            <div class="navbar-nav ms-auto">
+        <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav mx-auto">
                 <a href="index.html" class="nav-item nav-link">Главная</a>
                 <a href="about.html" class="nav-item nav-link">О нас</a>
                 <a href="contact.html" class="nav-item nav-link">Контакты</a>
@@ -221,6 +265,7 @@
     <!-- Footer End -->
 
     <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         function showLaptopRepairModal() {
             document.getElementById("laptopRepairModal").style.display = "block";

@@ -215,6 +215,48 @@
         .card {
             background-color: #121212;
         }
+        .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%28255, 255, 255, 1%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+        }
+        @media (max-width: 576px) {
+            /* Добавляем черный фон для текста и расширяем зону */
+            .carousel-caption {
+                background-color: rgba(0, 0, 0, 0.7);
+                padding: 1rem;                        /* Увеличиваем отступ для большего пространства */
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                max-width: 95%;                       /* Расширяем до почти полной ширины */
+                width: 100%;                          /* Устанавливаем ширину 100% */
+                text-align: center;
+                box-sizing: border-box;
+            }
+
+            /* Уменьшение шрифта заголовка и текста на мобильных */
+            .carousel-caption h1 {
+                font-size: 1.2rem;
+                margin-bottom: 0.4rem;
+            }
+
+            .carousel-caption p {
+                font-size: 0.9rem;
+                margin-bottom: 0.4rem;
+            }
+
+            /* Настройка кнопки */
+            .carousel-caption .btn {
+                font-size: 0.8rem;
+                padding: 0.3rem 0.6rem;
+            }
+
+            /* Ограничение высоты изображений карусели */
+            .carousel-item img {
+                max-height: 300px;
+                object-fit: cover;
+            }
+        }
+
     </style>
 </head>
 
@@ -237,8 +279,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
-            <div class="navbar-nav ms-auto">
-                <a href="index.html" class="nav-item nav-link">Главная</a>
+            <div class="navbar-nav mx-auto">
                 <a href="about.html" class="nav-item nav-link">О нас</a>
                 <a href="service.html" class="nav-item nav-link">Услуги</a>
                 <a href="partners.html" class="nav-item nav-link">Наши партнёры</a>
