@@ -20,12 +20,12 @@
 
     <style>
         body {
-            font-family: 'Poppins', sans-serif; /* Измененный шрифт на Poppins */
+            font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
             overflow-x: hidden;
-            background-color: #121212; /* Темный фон для современного вида */
-            color: white; /* Светлый текст на темном фоне */
+            background-color: #121212;
+            color: white;
         }
 
         /* Анимированный фон с частицами */
@@ -36,7 +36,7 @@
             width: 100%;
             height: 100%;
             z-index: -1;
-            background: #121212; /* Темный фон */
+            background: #121212;
             overflow: hidden;
         }
 
@@ -48,22 +48,16 @@
         }
 
         @keyframes float {
-            0% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-20px);
-            }
-            100% {
-                transform: translateY(0);
-            }
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0); }
         }
 
         /* Navbar Styles */
         nav {
-            background-color: rgba(18, 18, 18, 0.8); /* Полупрозрачный фон */
+            background-color: rgba(18, 18, 18, 0.8);
             backdrop-filter: blur(10px);
-            border-radius: 0 0 15px 15px; /* Округлые углы */
+            border-radius: 0 0 15px 15px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
             transition: background-color 0.3s ease;
         }
@@ -72,12 +66,26 @@
             background-color: rgba(18, 18, 18, 1);
         }
 
+        .navbar-brand h1 {
+            color: #ffffff !important;
+        }
+
+        .nav-item.nav-link {
+            color: rgba(255, 255, 255, 0.8) !important;
+            transition: color 0.3s ease;
+        }
+
+        .nav-item.nav-link:hover {
+            color: #ffffff !important;
+            text-decoration: none;
+        }
+
         /* Carousel Styles */
         .carousel-item img {
             width: 100%;
             height: 60vh;
             object-fit: cover;
-            filter: brightness(0.7); /* Затемнение изображений */
+            filter: brightness(0.7);
         }
 
         .carousel-caption {
@@ -95,7 +103,7 @@
         }
 
         .carousel-caption:hover {
-            transform: translate(-50%, -50%) scale(1.05); /* Увеличение при наведении */
+            transform: translate(-50%, -50%) scale(1.05);
         }
 
         .carousel-caption h1 {
@@ -113,14 +121,17 @@
         .carousel-caption a {
             font-size: 1rem;
             padding: 10px 20px;
-            background-color: #007bff;
+            background-color: #ffffff;
+            color: #121212;
             border-radius: 25px;
-            transition: background-color 0.3s ease, transform 0.3s ease;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            font-weight: 500;
         }
 
         .carousel-caption a:hover {
-            background-color: #0056b3; /* Тёмно-синий при наведении */
-            transform: translateY(-3px); /* Подъём кнопки при наведении */
+            background-color: #e6e6e6;
+            transform: translateY(-3px);
         }
 
         /* Testimonial Styles */
@@ -164,7 +175,7 @@
             height: 50px;
             border-radius: 50%;
             margin-bottom: 10px;
-            border: 2px solid #007bff; /* Граница вокруг изображения пользователя */
+            border: 2px solid #ffffff;
         }
 
         /* Footer Styles */
@@ -187,7 +198,7 @@
         }
 
         .footer a:hover {
-            color: #f0f2f5; /* Светлый цвет при наведении */
+            color: #f0f2f5;
             text-decoration: underline;
         }
 
@@ -201,39 +212,64 @@
 
         .carousel-control-prev:hover,
         .carousel-control-next:hover {
-            transform: scale(1.2); /* Увеличение стрелок при наведении */
+            transform: scale(1.2);
         }
 
         /* Collapsible Styles */
         .collapse {
-            background-color: rgba(255, 255, 255, 0.1); /* Полупрозрачный фон */
-            border: 1px solid rgba(255, 255, 255, 0.5); /* Полупрозрачная граница */
-            border-radius: 10px; /* Округлые углы */
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            border-radius: 10px;
             padding: 15px;
             margin-top: 20px;
         }
+        
         .card {
             background-color: #121212;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
+        
+        .btn-secondary {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.3);
+            color: white;
+        }
+        
+        .btn-secondary:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+        
+        .btn-primary {
+            background-color: #ffffff;
+            color: #121212;
+            border: none;
+            font-weight: 500;
+        }
+        
+        .btn-primary:hover {
+            background-color: #e6e6e6;
+            color: #121212;
+        }
+
         .navbar-toggler-icon {
-        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%28255, 255, 255, 1%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%28255, 255, 255, 1%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
         }
+        
         @media (max-width: 576px) {
-            /* Добавляем черный фон для текста и расширяем зону */
             .carousel-caption {
                 background-color: rgba(0, 0, 0, 0.7);
-                padding: 1rem;                        /* Увеличиваем отступ для большего пространства */
+                padding: 1rem;
                 position: absolute;
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%, -50%);
-                max-width: 95%;                       /* Расширяем до почти полной ширины */
-                width: 100%;                          /* Устанавливаем ширину 100% */
+                max-width: 95%;
+                width: 100%;
                 text-align: center;
                 box-sizing: border-box;
             }
 
-            /* Уменьшение шрифта заголовка и текста на мобильных */
             .carousel-caption h1 {
                 font-size: 1.2rem;
                 margin-bottom: 0.4rem;
@@ -244,19 +280,20 @@
                 margin-bottom: 0.4rem;
             }
 
-            /* Настройка кнопки */
             .carousel-caption .btn {
                 font-size: 0.8rem;
                 padding: 0.3rem 0.6rem;
             }
 
-            /* Ограничение высоты изображений карусели */
             .carousel-item img {
                 max-height: 300px;
                 object-fit: cover;
             }
+            
+            .testimonial-item {
+                width: 95%;
+            }
         }
-
     </style>
 </head>
 
@@ -298,7 +335,7 @@
                 <div class="carousel-caption">
                     <h1>Ваш надежный партнер в ремонте компьютеров</h1>
                     <p>Мы предоставляем качественные услуги по ремонту и обслуживанию ПК.</p>
-                    <a href="service.html" class="btn btn-primary">Узнать больше</a>
+                    <a href="service.html" class="btn">Узнать больше</a>
                 </div>
             </div>
             <div class="carousel-item">
@@ -306,7 +343,7 @@
                 <div class="carousel-caption">
                     <h1>Индивидуальные решения для вашего устройства</h1>
                     <p>Наши услуги адаптированы под ваши потребности.</p>
-                    <a href="service.html" class="btn btn-primary">Узнать больше</a>
+                    <a href="service.html" class="btn">Узнать больше</a>
                 </div>
             </div>
             <div class="carousel-item">
@@ -314,7 +351,7 @@
                 <div class="carousel-caption">
                     <h1>Мы заботимся о вашем ПК</h1>
                     <p>Качественный ремонт и услуги по обслуживанию для вашего компьютера.</p>
-                    <a href="service.html" class="btn btn-primary">Узнать больше</a>
+                    <a href="service.html" class="btn">Узнать больше</a>
                 </div>
             </div>
         </div>
@@ -331,12 +368,14 @@
 
     <!-- Collapse Section Start -->
     <div class="container">
-        <h2 class="mt-5">Наши услуги</h2>
-        <p class="lead">Мы предлагаем широкий спектр услуг по ремонту компьютеров и ноутбуков, включая:</p>
+        <h2 class="mt-5 text-center">Наши услуги</h2>
+        <p class="lead text-center">Мы предлагаем широкий спектр услуг по ремонту компьютеров и ноутбуков, включая:</p>
 
-        <button class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#servicesCollapse" aria-expanded="false" aria-controls="servicesCollapse">
-            Узнать подробнее о наших услугах
-        </button>
+        <div class="text-center">
+            <button class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#servicesCollapse" aria-expanded="false" aria-controls="servicesCollapse">
+                Узнать подробнее о наших услугах
+            </button>
+        </div>
 
         <div class="collapse" id="servicesCollapse">
             <div class="card card-body mt-3">
@@ -348,7 +387,9 @@
                 <p>Установка операционных систем и программного обеспечения. Поможем с настройкой и оптимизацией.</p>
                 <h4>Консультации и поддержка</h4>
                 <p>Постоянная техническая поддержка для наших клиентов. Мы всегда готовы ответить на ваши вопросы.</p>
-                <a href="contact.html" class="btn btn-primary mt-3">Связаться с нами</a>
+                <div class="text-center">
+                    <a href="contact.html" class="btn btn-primary mt-3">Связаться с нами</a>
+                </div>
             </div>
         </div>
     </div>
@@ -356,7 +397,7 @@
 
     <!-- Testimonials Start -->
     <div class="testimonial-container">
-        <h2>Отзывы клиентов</h2>
+        <h2 class="text-center mb-4">Отзывы клиентов</h2>
         <div class="testimonial-item">
             <img src="img/testimonial-1.jpg" alt="User 1" class="user-image">
             <p>Отличный сервис и быстрая работа. Рекомендую!</p>
@@ -379,13 +420,13 @@
     <!-- Testimonials End -->
 
     <!-- Footer Start -->
-    <footer class="footer">
+    <footer class="footer mt-5">
         <div class="container text-center">
             <h5>Контактная информация</h5>
             <p>Телефон: +7 (999) 123-45-67</p>
             <p>Email: info@.ru</p>
             <p>Адрес: г. Москва, ул. Примерная, 1</p>
-            <a href="#">Политика конфиденциальности</a>
+            <a href="konfident.html">Политика конфиденциальности</a>
         </div>
     </footer>
     <!-- Footer End -->

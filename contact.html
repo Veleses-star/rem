@@ -21,24 +21,24 @@
     <style>
         /* Основные стили */
         body {
-            font-family: 'Poppins', sans-serif; /* Используем шрифт Poppins */
-            background-color: #121212; /* Темный фон страницы */
-            color: white; /* Светлый текст */
+            font-family: 'Poppins', sans-serif;
+            background-color: #121212;
+            color: white;
             margin: 0;
             padding: 0;
-            position: relative; /* Устанавливаем относительное позиционирование для body */
+            position: relative;
         }
 
         h1,
         h2 {
-            color: #007bff; /* Цвет заголовков */
+            color: #ffffff;
         }
 
         /* Navbar Styles */
         nav {
-            background-color: rgba(18, 18, 18, 0.8); /* Полупрозрачный фон */
+            background-color: rgba(18, 18, 18, 0.8);
             backdrop-filter: blur(10px);
-            border-radius: 15px; /* Округлые углы */
+            border-radius: 15px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
             transition: background-color 0.3s ease;
         }
@@ -47,46 +47,82 @@
             background-color: rgba(18, 18, 18, 1);
         }
 
+        .navbar-brand h1 {
+            color: #ffffff !important;
+        }
+
+        .nav-item.nav-link {
+            color: rgba(255, 255, 255, 0.8) !important;
+            transition: color 0.3s ease;
+        }
+
+        .nav-item.nav-link:hover {
+            color: #ffffff !important;
+            text-decoration: none;
+        }
+
         /* Стили для формы */
         .form-control {
-            border: 1px solid #007bff; /* Цвет рамки */
-            border-radius: 0.5rem; /* Закругленные углы */
-            background: rgba(255, 255, 255, 0.1); /* Полупрозрачный фон */
-            color: white; /* Цвет текста */
+            border: 1px solid #ffffff;
+            border-radius: 0.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
         }
 
         .form-control:focus {
-            border-color: #007bff; /* Цвет рамки при фокусе */
-            box-shadow: 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Тень при фокусе */
+            border-color: #ffffff;
+            box-shadow: 0 0 0.2rem rgba(255, 255, 255, 0.25);
         }
 
         .btn-primary {
-            background-color: #007bff; /* Основной цвет кнопок */
-            border: none; /* Убираем границу */
-            transition: background-color 0.3s ease; /* Плавный переход */
+            background-color: #ffffff;
+            color: #121212;
+            border: none;
+            transition: all 0.3s ease;
+            font-weight: 500;
         }
 
         .btn-primary:hover {
-            background-color: #0056b3; /* Цвет кнопки при наведении */
+            background-color: #e6e6e6;
+            color: #121212;
+            transform: translateY(-2px);
         }
 
         /* Контейнер для формы */
         .contact-form-container {
-            max-width: 600px; /* Максимальная ширина для контейнера формы */
-            padding: 40px; /* Отступы для формы */
-            background: rgba(255, 255, 255, 0.1); /* Полупрозрачный фон */
-            border-radius: 10px; /* Закругленные углы */
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Тень */
-            margin: 0 auto; /* Центрирование формы */
-            position: relative; /* Позиционирование относительно родителя */
-            z-index: 1; /* Устанавливаем z-index, чтобы форма была выше фона */
+            max-width: 600px;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Стили для чекбокса конфиденциальности */
+        .privacy-check {
+            margin: 15px 0;
+        }
+
+        .privacy-check label {
+            margin-left: 10px;
+        }
+
+        .privacy-check a {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+
+        .privacy-check a:hover {
+            color: #e6e6e6;
         }
 
         /* Стили для раздела карты */
         .map-container {
             position: relative;
             width: 100%;
-            height: 450px; /* Высота карты */
+            height: 450px;
             margin-top: 30px;
         }
 
@@ -106,23 +142,15 @@
         }
 
         .footer a {
-            color: white; /* Цвет ссылок в футере */
+            color: white;
             transition: color 0.3s ease;
         }
 
         .footer a:hover {
-            color: #f0f2f5; /* Светлый цвет при наведении */
-            text-decoration: underline; /* Подчеркивание при наведении */
+            color: #f0f2f5;
+            text-decoration: underline;
         }
 
-        /* Collapsible Styles */
-        .collapse {
-            background-color: rgba(255, 255, 255, 0.1); /* Полупрозрачный фон */
-            border: 1px solid rgba(255, 255, 255, 0.5); /* Полупрозрачная граница */
-            border-radius: 10px; /* Округлые углы */
-            padding: 15px;
-            margin-top: 20px;
-        }
         /* Анимированный фон с частицами */
         .bg-animation {
             position: fixed;
@@ -131,11 +159,26 @@
             width: 100%;
             height: 100%;
             z-index: -1;
-            background: #121212; /* Темный фон */
+            background: #121212;
             overflow: hidden;
         }
+
         .navbar-toggler-icon {
-        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%28255, 255, 255, 1%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%28255, 255, 255, 1%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+        }
+
+        /* Анимация частиц */
+        .particle {
+            position: absolute;
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            animation: float 15s infinite linear;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+            100% { transform: translateY(0) rotate(360deg); }
         }
     </style>
 </head>
@@ -172,7 +215,7 @@
 
     <!-- Контактная форма -->
     <section class="contact-form-container mt-5">
-        <form>
+        <form id="contactForm">
             <div class="mb-3">
                 <input type="text" placeholder="Ваше имя" class="form-control" required>
             </div>
@@ -182,13 +225,19 @@
             <div class="mb-3">
                 <textarea placeholder="Ваше сообщение" class="form-control" required></textarea>
             </div>
-            <button type="submit" class="btn btn-primary">Отправить</button>
+            <div class="privacy-check form-check mb-3">
+                <input type="checkbox" class="form-check-input" id="privacyCheck" required>
+                <label class="form-check-label" for="privacyCheck">
+                    Я согласен с <a href="konfident.html" target="_blank">политикой конфиденциальности</a>
+                </label>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Отправить</button>
         </form>
     </section>
 
     <!-- Карта -->
     <section class="map-container">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2268.0286184490474!2d86.07941687667524!3d55.357503722369096!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x42d80be3e2d4d485%3A0xb4f84d162b39acae!2z0JLQtdGB0LXQvdC90Y_RjyDRg9C7LiwgMTIsINCa0LXQvNC10YDQvtCy0L4sINCa0LXQvNC10YDQvtCy0YHQutCw0Y8g0L7QsdC7LiwgNjUwMDAw!5e0!3m2!1sru!2sru!4v1730399462330!5m2!1sru!2sru" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2268.0286184490474!2d86.07941677667524!3d55.357503722369096!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x42d80be3e2d4d485%3A0xb4f84d162b39acae!2z0JLQtdGB0LXQvdC90Y_RjyDRg9C7LiwgMTIsINCa0LXQvNC10YDQvtCy0L4sINCa0LXQvNC10YDQvtCy0YHQutCw0Y8g0L7QsdC7LiwgNjUwMDAw!5e0!3m2!1sru!2sru!4v1730399462330!5m2!1sru!2sru" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </section>
 
     <!-- Footer Start -->
@@ -198,13 +247,29 @@
             <p>Телефон: +7 (999) 123-45-67</p>
             <p>Email: info@.ru</p>
             <p>Адрес: г. Москва, ул. Примерная, 1</p>
-            <a href="#">Политика конфиденциальности</a>
+            <a href="konfident.html">Политика конфиденциальности</a>
         </div>
     </footer>
     <!-- Footer End -->
 
     <!-- JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Обработка формы
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Проверка чекбокса конфиденциальности
+            if (!document.getElementById('privacyCheck').checked) {
+                alert('Пожалуйста, подтвердите согласие с политикой конфиденциальности');
+                return;
+            }
+            
+            // Здесь можно добавить код для отправки формы
+            alert('Форма успешно отправлена!');
+            this.reset();
+        });
+    </script>
 </body>
 
 </html>
