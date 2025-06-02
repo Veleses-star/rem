@@ -214,20 +214,20 @@
 
     <!-- Контактная форма -->
     <section class="contact-form-container mt-5">
-        <form id="contactForm">
+        <form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
             <div class="mb-3">
-                <input type="text" placeholder="Ваше имя" class="form-control" required>
+                <input type="text" name="name" placeholder="Ваше имя" class="form-control" required>
             </div>
             <div class="mb-3">
-                <input type="email" placeholder="Ваш email" class="form-control" required>
+                <input type="email" name="email" placeholder="Ваш email" class="form-control" required>
             </div>
             <div class="mb-3">
-                <textarea placeholder="Ваше сообщение" class="form-control" required></textarea>
+                <textarea name="message" placeholder="Ваше сообщение" class="form-control" required></textarea>
             </div>
             <div class="privacy-check form-check mb-3">
                 <input type="checkbox" class="form-check-input" id="privacyCheck" required>
                 <label class="form-check-label" for="privacyCheck">
-                    Я согласен с <a href="Konfident.html" target="_blank">политикой конфиденциальности</a>
+                    Я согласен с <a href="konfident.html" target="_blank">политикой конфиденциальности</a>
                 </label>
             </div>
             <button type="submit" class="btn btn-primary w-100">Отправить</button>
@@ -257,16 +257,36 @@
         // Обработка формы
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            
+
             // Проверка чекбокса конфиденциальности
             if (!document.getElementById('privacyCheck').checked) {
                 alert('Пожалуйста, подтвердите согласие с политикой конфиденциальности');
                 return;
             }
-            
-            // Здесь можно добавить код для отправки формы
-            alert('Форма успешно отправлена!');
-            this.reset();
+
+            // Отправка формы
+            fetch(this.action, {
+                method: 'POST',
+                body: new FormData(this),
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
+                if (response.ok) {
+                    alert('Форма успешно отправлена!');
+                    this.reset();
+                } else {
+                    response.json().then(data => {
+                        if (Object.hasOwn(data, 'errors')) {
+                            alert(data["errors"].map(error => error["message"]).join(", "));
+                        } else {
+                            alert('Ой! Что-то пошло не так при отправке формы.');
+                        }
+                    });
+                }
+            }).catch(error => {
+                alert('Ой! Что-то пошло не так при отправке формы.');
+            });
         });
     </script>
 </body>
