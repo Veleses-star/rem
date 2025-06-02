@@ -1,80 +1,245 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Правила конфиденциальности</title>
+  <title>Политика конфиденциальности | Ремонт компьютеров</title>
   <link href="img/icon/icon-04-primary.png" rel="icon">
+  
+  <!-- Google Web Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
   <style>
+    :root {
+      --primary-color: #ffffff;
+      --primary-hover: #e6e6e6;
+      --text-color: #f8f9fa;
+      --text-secondary: #adb5bd;
+      --bg-color: #121212;
+      --card-bg: rgba(255, 255, 255, 0.05);
+      --border-radius: 12px;
+      --box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+      --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+    
     body {
-      font-family: Arial, sans-serif;
-      font-size: 16px;
-      line-height: 1.5;
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.7;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
-
+    
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem;
+      flex: 1;
+    }
+    
+    header {
+      text-align: center;
+      margin-bottom: 3rem;
+      padding-top: 2rem;
+    }
+    
     h1 {
-      font-size: 24px;
-      margin-bottom: 10px;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+      position: relative;
+      display: inline-block;
     }
-
+    
+    h1::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 3px;
+      background: var(--primary-color);
+      border-radius: 3px;
+    }
+    
+    h2 {
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: var(--primary-color);
+      margin: 2.5rem 0 1.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    p {
+      margin-bottom: 1.5rem;
+      color: var(--text-secondary);
+      font-weight: 300;
+    }
+    
     ul {
       list-style-type: none;
       padding: 0;
+      margin-bottom: 2rem;
     }
-
+    
     li {
-      margin-bottom: 5px;
+      position: relative;
+      padding-left: 1.5rem;
+      margin-bottom: 0.8rem;
+      color: var(--text-secondary);
+    }
+    
+    li::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: var(--primary-color);
+      font-size: 1.2rem;
+    }
+    
+    .contact-info {
+      background: var(--card-bg);
+      padding: 1.5rem;
+      border-radius: var(--border-radius);
+      box-shadow: var(--box-shadow);
+      margin-top: 2rem;
+    }
+    
+    .contact-info li::before {
+      content: none;
+    }
+    
+    .update-date {
+      text-align: center;
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+    
+    footer {
+      background: rgba(18, 18, 18, 0.95);
+      color: var(--text-color);
+      padding: 1.5rem;
+      text-align: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    footer a {
+      color: var(--primary-color);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    
+    footer a:hover {
+      color: var(--primary-hover);
+      text-decoration: underline;
+    }
+    
+    @media (max-width: 768px) {
+      .container {
+        padding: 1.5rem;
+      }
+      
+      h1 {
+        font-size: 2rem;
+      }
+      
+      h2 {
+        font-size: 1.5rem;
+      }
     }
   </style>
 </head>
 <body>
-  <h1>Правила конфиденциальности</h1>
-  <p>Ремонт компьютеров ценит вашу конфиденциальность и стремится защищать вашу личную информацию.</p>
+  <div class="container">
+    <header>
+      <h1>Политика конфиденциальности</h1>
+      <p>Ремонт компьютеров ценит вашу конфиденциальность и стремится защищать вашу личную информацию.</p>
+    </header>
 
-  <h2>Как мы собираем информацию</h2>
-  <p>Мы собираем информацию, которую вы предоставляете нам, такую как:</p>
-  <ul>
-    <li>Имя</li>
-    <li>Адрес электронной почты</li>
-    <li>Номер телефона</li>
-  </ul>
-  <p>Мы также собираем информацию об использовании вами нашего сайта, такую как:</p>
-  <ul>
-    <li>Страницы, которые вы посещаете</li>
-    <li>Время, проведенное на сайте</li>
-  </ul>
+    <section>
+      <h2>Как мы собираем информацию</h2>
+      <p>Мы собираем информацию, которую вы предоставляете нам, такую как:</p>
+      <ul>
+        <li>Имя</li>
+        <li>Адрес электронной почты</li>
+        <li>Номер телефона</li>
+      </ul>
+      <p>Мы также собираем информацию об использовании вами нашего сайта, такую как:</p>
+      <ul>
+        <li>Страницы, которые вы посещаете</li>
+        <li>Время, проведенное на сайте</li>
+        <li>Устройство и браузер, которые вы используете</li>
+      </ul>
+    </section>
 
-  <h2>Как мы используем вашу информацию</h2>
-  <p>Мы используем вашу информацию для:</p>
-  <ul>
-    <li>Предоставления вам наших услуг</li>
-    <li>Улучшения нашего сайта</li>
-    <li>Персонализации вашего опыта</li>
-    <li>Маркетинга наших услуг</li>
-  </ul>
+    <section>
+      <h2>Как мы используем вашу информацию</h2>
+      <p>Мы используем вашу информацию для:</p>
+      <ul>
+        <li>Предоставления вам наших услуг</li>
+        <li>Улучшения нашего сайта и сервисов</li>
+        <li>Персонализации вашего опыта</li>
+        <li>Обратной связи и поддержки клиентов</li>
+        <li>Анализа использования наших услуг</li>
+      </ul>
+    </section>
 
-  <h2>Как мы защищаем вашу информацию</h2>
-  <p>Мы используем строгие меры безопасности для защиты вашей информации от несанкционированного доступа и использования.</p>
+    <section>
+      <h2>Как мы защищаем вашу информацию</h2>
+      <p>Мы применяем комплексные меры безопасности для защиты ваших данных:</p>
+      <ul>
+        <li>Шифрование передаваемых данных</li>
+        <li>Регулярное обновление систем безопасности</li>
+        <li>Ограниченный доступ к персональным данным</li>
+        <li>Регулярные проверки безопасности</li>
+      </ul>
+    </section>
 
-  <h2>Ваши права</h2>
-  <p>У вас есть право:</p>
-  <ul>
-    <li>Доступать к своей информации</li>
-    <li>Исправлять свою информацию</li>
-    <li>Удалять свою информацию</li>
-    <li>Ограничивать обработку вашей информации</li>
-    <li>Переносить свою информацию</li>
-  </ul>
+    <section>
+      <h2>Ваши права</h2>
+      <p>Согласно законодательству, вы имеете право:</p>
+      <ul>
+        <li>Запрашивать доступ к вашей персональной информации</li>
+        <li>Требовать исправления неточных данных</li>
+        <li>Запрашивать удаление ваших персональных данных</li>
+        <li>Ограничивать обработку вашей информации</li>
+        <li>Получать ваши данные в структурированном формате</li>
+        <li>Отзывать согласие на обработку данных</li>
+      </ul>
+    </section>
 
-  <h2>Свяжитесь с нами</h2>
-  <p>Если у вас есть какие-либо вопросы о наших Правилах конфиденциальности, свяжитесь с нами по адресу:</p>
-  <ul>
-    <li>Ремонт компьютеров</li>
-    <li>Ул. Примерная 10, Кемерово, Россия</li>
-    <li>+7 944 222 6215</li>
-    <li>svecs@gmail.com</li>
-  </ul>
+    <section>
+      <h2>Свяжитесь с нами</h2>
+      <p>Если у вас есть вопросы о нашей Политике конфиденциальности, пожалуйста, свяжитесь с нами:</p>
+      <div class="contact-info">
+        <ul>
+          <li><strong>Ремонт компьютеров</strong></li>
+          <li><i class="fas fa-map-marker-alt"></i> Ул. Примерная 10, Кемерово, Россия</li>
+          <li><i class="fas fa-phone"></i> +7 944 222 6215</li>
+          <li><i class="fas fa-envelope"></i> svecs@gmail.com</li>
+        </ul>
+      </div>
+    </section>
 
-  <p>Мы обновили наши Правила конфиденциальности 16.05.2024</p>
+    <div class="update-date">
+      <p>Последнее обновление: 16 мая 2024 года</p>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2024 <a href="index.html">Ремонт компьютеров</a>. Все права защищены.</p>
+  </footer>
 </body>
 </html>
